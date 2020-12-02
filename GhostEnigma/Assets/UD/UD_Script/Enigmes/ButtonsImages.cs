@@ -10,9 +10,18 @@ public class ButtonsImages : MonoBehaviour
 
     public static bool chimeraWinned;
 
+    GameObject player;
+    GameObject parent;
+    GameObject spawner;
+
     private void Start()
     {
         chimeraWinned = false;
+        player = GameObject.FindGameObjectWithTag("Player");
+        spawner = GameObject.FindGameObjectWithTag("Spawner");
+        parent = transform.root.gameObject;
+
+        player.GetComponent<PlayerInteractions>();
     }
 
     public void ButtonClicked()
@@ -20,6 +29,10 @@ public class ButtonsImages : MonoBehaviour
         if (goodAnswer)
         {
             chimeraWinned = true;
+            player.GetComponent<PlayerInteractions>().enigmaValidator++;
+            spawner.GetComponent<ObjectSpawner>().GenerateNewObject();
+            Destroy(parent);
+            
         }
         if (wrongAnswer)
         {
