@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/UD/UD_Scenes/UD_Jigsaw.unity
+- path: Assets/UD/UD_Scenes/UD_Chimera.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
