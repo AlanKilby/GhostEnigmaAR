@@ -4,33 +4,26 @@ using UnityEngine;
 
 public class RotationJigsaw : MonoBehaviour
 {
-    [SerializeField] private Transform[] pictures;
+    [SerializeField] private GameObject[] pictures;
 
-    Vector3 winRotation;
+    [SerializeField] float margeDErreur;
 
-    public static bool jigsawWinned;
-
-    void Start()
-    {
-        jigsawWinned = false;
-    }
+    public static bool jigsawWinned = false;
 
     void Update()
     {
-        /*foreach (Transform pieces in pictures)
+        int checkedJig = 0;
+        foreach (GameObject obj in pictures)
         {
-            if (pieces.rotation.z != 0)
+            if (obj == pictures[0])
             {
-                return;
+                if ((270 - margeDErreur < obj.GetComponent<Transform>().transform.rotation.eulerAngles.x && obj.GetComponent<Transform>().transform.rotation.eulerAngles.x < 270 + margeDErreur) || (90 - margeDErreur < obj.GetComponent<Transform>().transform.rotation.eulerAngles.x && obj.GetComponent<Transform>().transform.rotation.eulerAngles.x < 90 + margeDErreur)) checkedJig++;
             }
-        }*/
-        for(int i = 0; i<pictures.Length; i++)
-        {
-            if(pictures[i].rotation.z != 0)
+            else
             {
-                return;
+                if (270 - margeDErreur < obj.GetComponent<Transform>().transform.rotation.eulerAngles.x && obj.GetComponent<Transform>().transform.rotation.eulerAngles.x < 270 + margeDErreur) checkedJig++;
             }
         }
-        jigsawWinned = true;
+        if (checkedJig == pictures.Length) jigsawWinned = true;
     }
 }
