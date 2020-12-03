@@ -14,7 +14,7 @@ namespace UnityEngine.XR.ARFoundation
     [DefaultExecutionOrder(ARUpdateOrder.k_ReferencePoint)]
     [DisallowMultipleComponent]
     [HelpURL("https://docs.unity3d.com/Packages/com.unity.xr.arfoundation@latest?preview=1&subfolder=/api/UnityEngine.XR.ARFoundation.ARReferencePoint.html")]
-    public sealed class ARReferencePoint : ARTrackable<XRReferencePoint, ARReferencePoint>
+    public sealed class ARReferencePoint : ARTrackable<XRAnchor, ARReferencePoint>
     {
         /// <summary>
         /// Get the native pointer associated with this <see cref="ARReferencePoint"/>.

@@ -21,9 +21,9 @@ namespace UnityEngine.XR.ARFoundation
     [RequireComponent(typeof(ARSessionOrigin))]
     [HelpURL("https://docs.unity3d.com/Packages/com.unity.xr.arfoundation@latest?preview=1&subfolder=/api/UnityEngine.XR.ARFoundation.ARReferencePointManager.html")]
     public sealed class ARReferencePointManager : ARTrackableManager<
-        XRReferencePointSubsystem,
-        XRReferencePointSubsystemDescriptor,
-        XRReferencePoint,
+        XRAnchorSubsystem,
+        XRAnchorSubsystemDescriptor,
+        XRAnchor,
         ARReferencePoint>
     {
         [SerializeField]
@@ -68,8 +68,8 @@ namespace UnityEngine.XR.ARFoundation
             var sessionRelativePose = sessionOrigin.trackablesParent.InverseTransformPose(pose);
 
             // Add the reference point to the XRReferencePointSubsystem
-            XRReferencePoint sessionRelativeData;
-            if (subsystem.TryAddReferencePoint(sessionRelativePose, out sessionRelativeData))
+            XRAnchor sessionRelativeData;
+            if (subsystem.TryAddAnchor(sessionRelativePose, out sessionRelativeData))
                 return CreateTrackableImmediate(sessionRelativeData);
 
             return null;
@@ -93,8 +93,8 @@ namespace UnityEngine.XR.ARFoundation
                 throw new ArgumentNullException("plane");
 
             var sessionRelativePose = sessionOrigin.trackablesParent.InverseTransformPose(pose);
-            XRReferencePoint sessionRelativeData;
-            if (subsystem.TryAttachReferencePoint(plane.trackableId, sessionRelativePose, out sessionRelativeData))
+            XRAnchor sessionRelativeData;
+            if (subsystem.TryAttachAnchor(plane.trackableId, sessionRelativePose, out sessionRelativeData))
                 return CreateTrackableImmediate(sessionRelativeData);
 
             return null;
@@ -119,7 +119,7 @@ namespace UnityEngine.XR.ARFoundation
             if (referencePoint == null)
                 throw new ArgumentNullException("referencePoint");
 
-            if (subsystem.TryRemoveReferencePoint(referencePoint.trackableId))
+            if (subsystem.TryRemoveAnchor(referencePoint.trackableId))
             {
                 DestroyPendingTrackable(referencePoint.trackableId);
                 return true;
