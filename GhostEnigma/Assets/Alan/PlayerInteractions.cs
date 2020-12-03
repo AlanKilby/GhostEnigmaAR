@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerInteractions : MonoBehaviour
 {
-    public float enigmaValidator;
+    public int enigmaValidator;
+    public GameObject[] enigmaList;
 
     private void Start()
     {

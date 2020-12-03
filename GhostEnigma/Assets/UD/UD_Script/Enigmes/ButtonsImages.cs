@@ -19,7 +19,7 @@ public class ButtonsImages : MonoBehaviour
         chimeraWinned = false;
         player = GameObject.FindGameObjectWithTag("Player");
         spawner = GameObject.FindGameObjectWithTag("Spawner");
-        parent = transform.root.gameObject;
+        parent = transform.parent.gameObject;
 
         player.GetComponent<PlayerInteractions>();
     }
@@ -30,7 +30,7 @@ public class ButtonsImages : MonoBehaviour
         {
             chimeraWinned = true;
             player.GetComponent<PlayerInteractions>().enigmaValidator++;
-            spawner.GetComponent<ObjectSpawner>().GenerateNewObject();
+            spawner.GetComponent<ObjectSpawner>().GenerateSecondChallenge();
             Destroy(parent);
             
         }

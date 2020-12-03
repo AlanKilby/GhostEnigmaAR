@@ -10,16 +10,12 @@ public class StartEnigma : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            enigma.SetActive(true);
+            other.GetComponent<PlayerInteractions>().enigmaList[other.GetComponent<PlayerInteractions>().enigmaValidator].SetActive(true);
+            //Instantiate(enigma, other.transform);
+            //enigma.SetActive(true);
             Debug.Log("hit");
+            Destroy(gameObject);
         }
-        
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        
-            
         
     }
 

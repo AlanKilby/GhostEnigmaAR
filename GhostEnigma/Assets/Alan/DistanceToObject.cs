@@ -11,7 +11,7 @@ public class DistanceToObject : MonoBehaviour
 
     private void Start()
     {
-        distanceHolder = Vector3.Distance(transform.position, objectSpawner.objectList[0].transform.position)/2;
+        distanceHolder = Vector3.Distance(transform.position, objectSpawner.currentObject.transform.position)/2;
     }
 
     private void Update()
@@ -51,7 +51,7 @@ public class DistanceToObject : MonoBehaviour
         {
             audioBeep.clip = beep[0];
             audioBeep.Play();
-            distanceHolder = Vector3.Distance(transform.position, objectSpawner.objectList[0].transform.position)/2;
+            distanceHolder = Vector3.Distance(transform.position, objectSpawner.currentObject.transform.position)/2;
         }
         
 

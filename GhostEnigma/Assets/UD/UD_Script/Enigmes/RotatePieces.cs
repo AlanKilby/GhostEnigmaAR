@@ -10,7 +10,7 @@ public class RotatePieces : MonoBehaviour
     {
         if (!RotationJigsaw.jigsawWinned)
         {
-            transform.Rotate(rotationOnClick, 0f, 0f, Space.World);
+            transform.Rotate( 0f, 0f, rotationOnClick, Space.World);
             //gameObject.transform.rotation(transform.rotation.x + rotationOnClick, 0f, 0f);
         }
     }

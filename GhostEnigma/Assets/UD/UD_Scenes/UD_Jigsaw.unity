@@ -481,7 +481,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1464223829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -670,6 +670,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UD_PentacleJigsaw MeshCollider
+      objectReference: {fileID: 0}
+    - target: {fileID: 6060513625168839254, guid: 070aaa7159a50bf4789100e27327d47e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6272346459416303803, guid: 070aaa7159a50bf4789100e27327d47e,
         type: 3}
