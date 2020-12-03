@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class RotationJigsaw : MonoBehaviour
 {
-    [SerializeField] private Transform[] pictures;
+    [SerializeField] private GameObject[] pictures;
 
     Vector3 winRotation;
+
+    [SerializeField] float margeDErreur;
 
     public static bool jigsawWinned;
 
@@ -26,11 +28,22 @@ public class RotationJigsaw : MonoBehaviour
         }*/
         for(int i = 0; i<pictures.Length; i++)
         {
-            if(pictures[i].rotation.z != 0)
+
+            //float xTransformRotation = pictures[i].transform.eulerAngles.x;
+            //float xTransformRotation = pictures[i].transform.localEulerAngles.x;
+            float xTransformRotation = pictures[i].transform.localEulerAngles.x;
+            Debug.Log("Object "+i+" current rotation "+xTransformRotation);
+            if (-margeDErreur< xTransformRotation && xTransformRotation < margeDErreur)
             {
+                Debug.Log("check" + i);
+            }
+            else
+            {
+                Debug.Log("return" + i);
                 return;
             }
         }
         jigsawWinned = true;
+        Debug.Log(jigsawWinned);
     }
 }
