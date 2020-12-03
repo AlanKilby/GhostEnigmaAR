@@ -6,44 +6,24 @@ public class RotationJigsaw : MonoBehaviour
 {
     [SerializeField] private GameObject[] pictures;
 
-    Vector3 winRotation;
-
     [SerializeField] float margeDErreur;
 
-    public static bool jigsawWinned;
-
-    void Start()
-    {
-        jigsawWinned = false;
-    }
+    public static bool jigsawWinned = false;
 
     void Update()
     {
-        /*foreach (Transform pieces in pictures)
+        int checkedJig = 0;
+        foreach (GameObject obj in pictures)
         {
-            if (pieces.rotation.z != 0)
+            if (obj == pictures[0])
             {
-                return;
-            }
-        }*/
-        for(int i = 0; i<pictures.Length; i++)
-        {
-
-            //float xTransformRotation = pictures[i].transform.eulerAngles.x;
-            //float xTransformRotation = pictures[i].transform.localEulerAngles.x;
-            float xTransformRotation = pictures[i].transform.localEulerAngles.x;
-            Debug.Log("Object "+i+" current rotation "+xTransformRotation);
-            if (-margeDErreur< xTransformRotation && xTransformRotation < margeDErreur)
-            {
-                Debug.Log("check" + i);
+                if ((270 - margeDErreur < obj.GetComponent<Transform>().transform.rotation.eulerAngles.x && obj.GetComponent<Transform>().transform.rotation.eulerAngles.x < 270 + margeDErreur) || (90 - margeDErreur < obj.GetComponent<Transform>().transform.rotation.eulerAngles.x && obj.GetComponent<Transform>().transform.rotation.eulerAngles.x < 90 + margeDErreur)) checkedJig++;
             }
             else
             {
-                Debug.Log("return" + i);
-                return;
+                if (270 - margeDErreur < obj.GetComponent<Transform>().transform.rotation.eulerAngles.x && obj.GetComponent<Transform>().transform.rotation.eulerAngles.x < 270 + margeDErreur) checkedJig++;
             }
         }
-        jigsawWinned = true;
-        Debug.Log(jigsawWinned);
+        if (checkedJig == pictures.Length) jigsawWinned = true;
     }
 }
