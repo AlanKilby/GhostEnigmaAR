@@ -10,9 +10,13 @@ public class ButtonsImages : MonoBehaviour
 
     public static bool chimeraWinned;
 
+    public InstantiateIcon icon;
+
     GameObject player;
     GameObject parent;
     GameObject spawner;
+
+    public GameObject upsideDown;
 
     private void Start()
     {
@@ -31,6 +35,10 @@ public class ButtonsImages : MonoBehaviour
             chimeraWinned = true;
             player.GetComponent<PlayerInteractions>().enigmaValidator++;
             spawner.GetComponent<ObjectSpawner>().GenerateChallenge();
+            icon.InstatiateIcon();
+            upsideDown = GameObject.FindGameObjectWithTag("upsidedown");
+            Destroy(upsideDown);
+            DistanceToObject.canDetect = true;
             parent.SetActive(false);
             
         }

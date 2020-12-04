@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7885013270511088626}
   - component: {fileID: 4803949544697007634}
   m_Layer: 0
-  m_Name: CubeEnigma1 1
+  m_Name: CubeEnigma
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -107,6 +107,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c17a64d65eb530d49881400b85d1f6be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newSpawner: {fileID: 0}
+  upsideDown: {fileID: 2245291157313647846, guid: d6e9207fe1da2954d96dbfad0241d91c,
+    type: 3}
 --- !u!54 &4803949544697007634
 Rigidbody:
   m_ObjectHideFlags: 0

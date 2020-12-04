@@ -6,10 +6,14 @@ public class PlayerInteractions : MonoBehaviour
 {
     public int enigmaValidator;
     public GameObject[] enigmaList;
+    public GameObject boss;
+    public GameObject bossSpawn;
+    public GameObject spawnHolder;
 
     private void Start()
     {
         enigmaValidator = 0;
+        Boss();
     }
 
 
@@ -25,6 +29,6 @@ public class PlayerInteractions : MonoBehaviour
 
     void Boss()
     {
-
+        Instantiate(boss,spawnHolder.transform.position, Quaternion.identity, bossSpawn.transform);
     }
 }

@@ -14,6 +14,10 @@ public class LightEnigmaScript : MonoBehaviour
 
     public float timer;
 
+    public InstantiateIcon icon;
+
+    public GameObject upsideDown;
+
 
     void Start()
     {
@@ -44,6 +48,10 @@ public class LightEnigmaScript : MonoBehaviour
 
             player.GetComponent<PlayerInteractions>().enigmaValidator++;
             objectSpawner.GetComponent<ObjectSpawner>().GenerateChallenge();
+            DistanceToObject.canDetect = true;
+            icon.InstatiateIcon();
+            upsideDown = GameObject.FindGameObjectWithTag("upsidedown");
+            Destroy(upsideDown);
             gameObject.SetActive(false);
         }
     }
