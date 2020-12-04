@@ -9,6 +9,8 @@ public class PlayerInteractions : MonoBehaviour
     public GameObject boss;
     public GameObject bossSpawn;
     public GameObject spawnHolder;
+    public AudioSource audioPlayer;
+    public AudioClip bossSpawnSound;
 
     private void Start()
     {
@@ -29,6 +31,7 @@ public class PlayerInteractions : MonoBehaviour
 
     void Boss()
     {
+        audioPlayer.PlayOneShot(bossSpawnSound);
         Instantiate(boss,spawnHolder.transform.position, Quaternion.identity, bossSpawn.transform);
     }
 }

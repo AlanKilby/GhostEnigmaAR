@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRed: 0
-  red: {fileID: 2100000, guid: c68bbdeddb5d4d240a205e37c657a493, type: 2}
+  red: {fileID: 2100000, guid: 754f8485d6cdac04db9aab10f9ab9969, type: 2}
   white: {fileID: 2100000, guid: f1ac4f7876bde0542b1fbdc6731d1d42, type: 2}
   skull: {fileID: 7602461749138918333}
   canBecomeRed: 0
@@ -297,7 +297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRed: 0
-  red: {fileID: 2100000, guid: c68bbdeddb5d4d240a205e37c657a493, type: 2}
+  red: {fileID: 2100000, guid: 754f8485d6cdac04db9aab10f9ab9969, type: 2}
   white: {fileID: 2100000, guid: f1ac4f7876bde0542b1fbdc6731d1d42, type: 2}
   skull: {fileID: 7602461749138918333}
   canBecomeRed: 0
@@ -408,7 +408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRed: 0
-  red: {fileID: 2100000, guid: c68bbdeddb5d4d240a205e37c657a493, type: 2}
+  red: {fileID: 2100000, guid: 754f8485d6cdac04db9aab10f9ab9969, type: 2}
   white: {fileID: 2100000, guid: f1ac4f7876bde0542b1fbdc6731d1d42, type: 2}
   skull: {fileID: 7602461749138918333}
   canBecomeRed: 0
@@ -519,7 +519,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRed: 0
-  red: {fileID: 2100000, guid: c68bbdeddb5d4d240a205e37c657a493, type: 2}
+  red: {fileID: 2100000, guid: 754f8485d6cdac04db9aab10f9ab9969, type: 2}
   white: {fileID: 2100000, guid: f1ac4f7876bde0542b1fbdc6731d1d42, type: 2}
   skull: {fileID: 7602461749138918333}
   canBecomeRed: 0
@@ -534,6 +534,7 @@ GameObject:
   - component: {fileID: 7118658304504221959}
   - component: {fileID: 7548128843714865758}
   - component: {fileID: 7052324766983091289}
+  - component: {fileID: 6706399742816033691}
   m_Layer: 0
   m_Name: Skull
   m_TagString: Boss
@@ -592,6 +593,8 @@ MonoBehaviour:
   - {fileID: 4404726474994727472}
   - {fileID: 5199447254186592514}
   player: {fileID: 0}
+  bossAudio: {fileID: 6706399742816033691}
+  playerDeathSound: {fileID: 8300000, guid: 2e2f19d5adcd32c4d96098becb0931bd, type: 3}
 --- !u!114 &7052324766983091289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -606,6 +609,102 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amplitude: 0.1
   frequency: 0.7
+--- !u!82 &6706399742816033691
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7602461749138918333}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &8162396952950424535
 GameObject:
   m_ObjectHideFlags: 0
@@ -713,7 +812,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRed: 0
-  red: {fileID: 2100000, guid: c68bbdeddb5d4d240a205e37c657a493, type: 2}
+  red: {fileID: 2100000, guid: 754f8485d6cdac04db9aab10f9ab9969, type: 2}
   white: {fileID: 2100000, guid: f1ac4f7876bde0542b1fbdc6731d1d42, type: 2}
   skull: {fileID: 7602461749138918333}
   canBecomeRed: 0
@@ -728,8 +827,13 @@ PrefabInstance:
         type: 3}
       propertyPath: sharedProfile
       value: 
-      objectReference: {fileID: 11400000, guid: 1754533234bf8a742b5a901e2ed282fe,
+      objectReference: {fileID: 11400000, guid: df0cdb784eea45a45a86bad6be938457,
         type: 2}
+    - target: {fileID: 2245291157313647844, guid: d6e9207fe1da2954d96dbfad0241d91c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2245291157313647845, guid: d6e9207fe1da2954d96dbfad0241d91c,
         type: 3}
       propertyPath: m_LocalPosition.x

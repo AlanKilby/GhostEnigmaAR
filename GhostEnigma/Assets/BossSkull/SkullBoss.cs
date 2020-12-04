@@ -26,6 +26,9 @@ public class SkullBoss : MonoBehaviour
 
     bool canLayout;
 
+    public AudioSource bossAudio;
+    public AudioClip playerDeathSound;
+
     void Start()
     {
         timerHolder = timer;
@@ -115,6 +118,7 @@ public class SkullBoss : MonoBehaviour
 
     void PlayerDeath()
     {
+        bossAudio.PlayOneShot(playerDeathSound);
         Instantiate(youDied);
         isAlive = false;
         for (int i = 0; i < eyeList.Length; i++)
