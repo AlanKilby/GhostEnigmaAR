@@ -9,6 +9,12 @@ public class LightEnigmaScript : MonoBehaviour
     public GameObject lightOne, lightTwo, lightThree, lightFour;
     private bool lightOneb, lightTwob, lightThreeb, lightFourb;
 
+    public GameObject player;
+    public GameObject objectSpawner;
+
+    public float timer;
+
+
     void Start()
     {
         lightOne.SetActive(false);
@@ -27,10 +33,19 @@ public class LightEnigmaScript : MonoBehaviour
     {
 
         // when the "if" function beneath is good, then the enigma is solved.
-        //if (lightOne && lightTwo && lightThree && lightFour)
-        //{
+        if (lightOneb && lightTwob && lightThreeb && lightFourb && timer > 0)
+        {
+            timer -= Time.deltaTime;
+        }
 
-        //}
+        if (lightOneb && lightTwob && lightThreeb && lightFourb && timer < 0)
+        {
+
+
+            player.GetComponent<PlayerInteractions>().enigmaValidator++;
+            objectSpawner.GetComponent<ObjectSpawner>().GenerateChallenge();
+            gameObject.SetActive(false);
+        }
     }
 
 
@@ -119,6 +134,11 @@ public class LightEnigmaScript : MonoBehaviour
             lightThreeb = false;
             lightFourb = false;
         }
+    }
+
+
+    void Victory()
+    {  
     }
 
 }

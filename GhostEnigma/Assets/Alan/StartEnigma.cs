@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class StartEnigma : MonoBehaviour
 {
-    public GameObject enigma;
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -15,8 +13,7 @@ public class StartEnigma : MonoBehaviour
             //enigma.SetActive(true);
             Debug.Log("hit");
             Destroy(gameObject);
-        }
-        
+        }   
     }
 
 

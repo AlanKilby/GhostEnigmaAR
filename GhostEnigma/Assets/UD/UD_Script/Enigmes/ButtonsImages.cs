@@ -30,8 +30,8 @@ public class ButtonsImages : MonoBehaviour
         {
             chimeraWinned = true;
             player.GetComponent<PlayerInteractions>().enigmaValidator++;
-            spawner.GetComponent<ObjectSpawner>().GenerateSecondChallenge();
-            Destroy(parent);
+            spawner.GetComponent<ObjectSpawner>().GenerateChallenge();
+            parent.SetActive(false);
             
         }
         if (wrongAnswer)
