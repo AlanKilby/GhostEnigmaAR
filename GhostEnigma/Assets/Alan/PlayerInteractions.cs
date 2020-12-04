@@ -13,7 +13,6 @@ public class PlayerInteractions : MonoBehaviour
     private void Start()
     {
         enigmaValidator = 0;
-        Boss();
     }
 
 
@@ -22,6 +21,7 @@ public class PlayerInteractions : MonoBehaviour
         if(enigmaValidator >= 3)
         {
             Boss();
+            enigmaValidator = 0;
         }
     }
 

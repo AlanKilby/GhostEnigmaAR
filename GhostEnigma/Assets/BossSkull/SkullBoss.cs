@@ -24,6 +24,8 @@ public class SkullBoss : MonoBehaviour
 
     public GameObject player;
 
+    bool canLayout;
+
     void Start()
     {
         timerHolder = timer;
@@ -33,8 +35,8 @@ public class SkullBoss : MonoBehaviour
         matWhite = Resources.Load("BossFlash", typeof(Material)) as Material;
         matDefault = mr.material;
         player = GameObject.FindGameObjectWithTag("Player");
-        youWin = GameObject.FindGameObjectWithTag("WinScreen");
-        youDied = GameObject.FindGameObjectWithTag("DefeatScreen");
+        canLayout = true;
+        
     }
 
     void Update()
@@ -83,14 +85,16 @@ public class SkullBoss : MonoBehaviour
             //CheckPlayerHP();
         }
 
-        if (bossHp <= 0)
+        if (bossHp <= 0 && canLayout)
         {
             Instantiate(explosion, particleHolder.transform);
-            youWin.SetActive(true);
+            Instantiate(youWin);
+            canLayout = false;
             Destroy(gameObject);
+
         }
 
-        if(playerHP < 0)
+        if(playerHP <= 0 && canLayout)
         {
             PlayerDeath();
         }
@@ -111,12 +115,13 @@ public class SkullBoss : MonoBehaviour
 
     void PlayerDeath()
     {
-        youDied.SetActive(true);
+        Instantiate(youDied);
         isAlive = false;
         for (int i = 0; i < eyeList.Length; i++)
         {
             eyeList[i].GetComponent<EyeBehaviour>().isRed = true;
         }
+        canLayout = false;
     }
     void ResetMaterial() 
     { 

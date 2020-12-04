@@ -397,7 +397,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 2
+  m_Text: 
 --- !u!1 &7299125097414465295
 GameObject:
   m_ObjectHideFlags: 0
@@ -659,7 +659,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 
 --- !u!1 &7299125097863888686
 GameObject:
   m_ObjectHideFlags: 0
@@ -960,7 +960,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 4
+  m_Text: 
 --- !u!1 &7299125098381390117
 GameObject:
   m_ObjectHideFlags: 0
@@ -1242,6 +1242,11 @@ MonoBehaviour:
   lightTwo: {fileID: 7299125099158167667}
   lightThree: {fileID: 7299125097414465295}
   lightFour: {fileID: 7299125097417601794}
+  player: {fileID: 0}
+  objectSpawner: {fileID: 0}
+  timer: 0
+  icon: {fileID: 0}
+  upsideDown: {fileID: 0}
 --- !u!1 &7299125098755351496
 GameObject:
   m_ObjectHideFlags: 0
@@ -1319,7 +1324,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 3
+  m_Text: 
 --- !u!1 &7299125099158167667
 GameObject:
   m_ObjectHideFlags: 0

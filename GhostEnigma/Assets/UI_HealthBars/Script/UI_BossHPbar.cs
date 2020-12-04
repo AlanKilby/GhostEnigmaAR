@@ -14,7 +14,7 @@ public class UI_BossHPbar : MonoBehaviour
     {
         SB = GameObject.Find("Boss").GetComponent<SkullBoss>();
         DetectorBar = GetComponent<Image>();
-        DetectorBar.fillAmount = 0;
+        DetectorBar.fillAmount = SB.bossHp;
         bossHPTotal = SB.bossHp;
     }
 
